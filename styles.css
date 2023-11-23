@@ -47,7 +47,7 @@ body.dark select{
 }
 
 body.dark {
-    background-color: #161616;
+    background-color: #191919;
     color: #f0f0f0;
 }
 
@@ -213,4 +213,5 @@ body.light .label .ball{
     display: flex;
     margin: auto;
 }
+
   

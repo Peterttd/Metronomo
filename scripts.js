@@ -50,17 +50,31 @@ function playAudio(){
         audio.play();
         bat ++;
         console.log(bat)
+
+        box.style.boxShadow = '0 0 3rem rgba(155, 155, 155, 255)';
+        setTimeout(function () {
+            box.style.boxShadow = 'none';
+        }, 100);
     }else if(bat == comp - 1){
         bat = 0;
+        box.style.boxShadow = '0 0 1rem rgba(155, 155, 155, 255)';
+        setTimeout(function () {
+            box.style.boxShadow = 'none';
+        }, 100);
     }else{
         audio.volume = 0.3 * volume;
         audio.play();
         bat ++;
+        box.style.boxShadow = '0 0 1rem rgba(155, 155, 155, 255)';
+        setTimeout(function () {
+            box.style.boxShadow = 'none';
+        }, 100);
     }
 }
 function startMetronome(){
     console.log(bat)
     if(!isPlayng){
+        bat = 0;
         playAudio();
         isPlayng = true;
         console.log("iniciou");
@@ -76,6 +90,7 @@ function startMetronome(){
         document.getElementById("labelButton").classList.remove("pressed");
         document.getElementById("icon").classList.toggle("fa-play")
         document.getElementById("icon").classList.toggle("fa-stop")
+        box.style.boxShadow = '0 0 9px #50505056';
     }
 }
 
@@ -88,3 +103,4 @@ function turnMode(){
     document.body.classList.add("light");   
     }
 }
+
