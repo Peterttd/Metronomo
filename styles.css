@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+* {
+    margin: 0px;
+    text-rendering: optimizeLegibility;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    color: #161616;
+
+    transition: background 0.15s linear;
+    
+}
+
+body input[type="number"]{
+    border-width: 0.1rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    border-color: gray;
+}
+
+body.dark input[type="number"]{
+    background-color: #101010;
+    color: #f0f0f0;
+}
+
+body select{
+    border-width: 0.1rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    border-color: gray;
+
+}
+
+body.dark select{
+    background-color: #101010;
+    color: #f0f0f0;
+}
+
+body.dark {
+    background-color: #161616;
+    color: #f0f0f0;
+}
+
+body.light{
+    background-color: #f0f0f0;
+}
+
+body.light input[type="range"]{   
+    accent-color: lightblue;
+    background-color: gray;
+    border-radius: 1rem;
+    
+    border: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-clear-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+body.light .metronome {
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #fdfdfd;
+    box-shadow: 0 0 9px #50505056;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+body.dark .metronome {
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #101010;
+    box-shadow: 0 0 5px #50505016;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.metronome div {
+    padding: 0.5rem;
+}
+
+
+
+.theme{
+    position: absolute;
+    bottom: 2rem;
+}
+
+.checkbox{
+    opacity: 0;
+    position: absolute;
+}
+
+body.dark .label{
+    background-color: #f0f0f0;
+}
+
+body.light .label{
+    background-color: #114;
+}
+
+.label{
+    background-color: #111;
+    border-radius: 1rem;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+}
+
+.label .ball{
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    height: 22px;
+    width: 22px;
+
+    transform: translateX(0px);
+    transition: transform 0.14s linear;
+}
+
+body.dark .label .ball{
+    background-color: #161616;
+}
+
+body.light .label .ball{
+    background-color: #f0f0f0;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(24px);
+}
+  
+.fa-moon {
+    color: #f1c40f;
+}
+  
+.fa-sun {
+    color: #f39c12;
+}
+
+
+.button{
+    opacity: 0;
+    position: absolute;
+}
+
+.play{
+    display: flex;
+    justify-content: center;
+}
+
+.labelButton{
+    margin: 0;
+    background-color: #111;
+    border-radius: .3rem;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px;
+    position: relative;
+    height: 3rem;
+    width: 5rem;
+}
+
+
+.fa-play {
+    color: #f1c40f;
+    position: absolute;
+    width: 11vh;
+}
+  
+.fa-stop {
+    position: absolute;
+    width: 11vh;
+    color: #f39c12;
+}
