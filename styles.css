@@ -165,6 +165,7 @@ body.light .label .ball{
 .button{
     opacity: 0;
     position: absolute;
+
 }
 
 .play{
@@ -174,7 +175,7 @@ body.light .label .ball{
 
 .labelButton{
     margin: 0;
-    background-color: #111;
+    background-color: #222;
     border-radius: .3rem;
     cursor: pointer;
 
@@ -186,17 +187,30 @@ body.light .label .ball{
     position: relative;
     height: 3rem;
     width: 5rem;
+
+    border: #555 solid .2rem ;
+    border-radius: .3rem;
+
+    box-shadow: 0 0 5px #aaaaaa55;
+}
+
+.labelButton.pressed{
+    background-color: #111;
+
+    border: #444 solid .3rem ;
+    border-radius: .3rem;
 }
 
 
 .fa-play {
     color: #f1c40f;
-    position: absolute;
-    width: 11vh;
+    display: flex;
+    margin: auto;
+}
+
+.fa-stop {
+    color: #f1c40f;
+    display: flex;
+    margin: auto;
 }
   
-.fa-stop {
-    position: absolute;
-    width: 11vh;
-    color: #f39c12;
-}

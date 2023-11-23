@@ -7,6 +7,7 @@ let timer = null;
 let comp = 4;
 let bat = 0;
 let dobrar = 60000;
+const box = document.getElementById("box");
 
 function updateVolumeLabel(newVolume){
     volume = newVolume;
@@ -64,16 +65,17 @@ function startMetronome(){
         isPlayng = true;
         console.log("iniciou");
         timer = setInterval(playAudio, dobrar/tempo);
-        document.getElementById("button").innerHTML = "Stop";
-        document.getElementById("button").classList.remove("unpressed");   
-        document.getElementById("button").classList.add("pressed");
+        document.getElementById("labelButton").classList.add("pressed");
+        document.getElementById("icon").classList.toggle("fa-play")
+        document.getElementById("icon").classList.toggle("fa-stop")
     }else{
         clearInterval(timer);
         isPlayng = false;
         console.log("parou");
         document.getElementById("button").innerHTML = "Play";
-        document.getElementById("button").classList.remove("pressed");   
-        document.getElementById("button").classList.add("unpressed");
+        document.getElementById("labelButton").classList.remove("pressed");
+        document.getElementById("icon").classList.toggle("fa-play")
+        document.getElementById("icon").classList.toggle("fa-stop")
     }
 }
 
