@@ -192,11 +192,19 @@ body.light .label .ball{
     border: #555 solid .2rem ;
     border-radius: .3rem;
 
-    box-shadow: 0 0 5px #aaaaaa55;
+    box-shadow: 0 0 3px #aaaaaa44;
+}
+
+body.light .labelButton{
+    background-color: #ccc;
+}
+
+body.light .labelButton.labelButton.pressed{
+    background-color: #aaa;
 }
 
 .labelButton.pressed{
-    background-color: #111;
+    background-color: #191919;
 
     border: #444 solid .3rem ;
     border-radius: .3rem;
@@ -210,7 +218,7 @@ body.light .label .ball{
 }
 
 .fa-stop {
-    color: #ce2f13;
+    color: #f1c40f;
     display: flex;
     margin: auto;
 }
