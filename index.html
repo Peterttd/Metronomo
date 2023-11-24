@@ -8,11 +8,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="light">
+<body class="dark">
 
     <audio id="metronomeAudio" src="click.mp3"></audio>
 
     <div id="box" class="metronome">
+        <div class="balls">
+            <div id="ball0" class="ball-box"></div>
+            <div id="ball1" class="ball-box"></div>
+            <div id="ball2" class="ball-box"></div>
+            <div id="ball3" class="ball-box"></div>
+            <div id="ball4" class="ball-box"></div>
+            <div id="ball5" class="ball-box"></div>
+        </div>
+
         <div>
             <label for="tempoInput">Tempo (BPM): </label>
             <input type="number" id="tempoInput" min="30" max="300" value="120" onchange="updateTempo(this.value)">
@@ -35,21 +44,21 @@
         </div>
 
         <div class="play">
-        <button id="button" class="button " onclick="startMetronome()">Play</button>
-        <label id="labelButton" class="labelButton pressed" for="button">
-            <i id="icon" class="fa fa-play"></i>
-          </label>
+            <button id="button" class="button " onclick="startMetronome()">Play</button>
+            <label id="labelButton" class="labelButton pressed" for="button">
+                <i id="icon" class="fa fa-play"></i>
+            </label>
         </div>
     </div>
     <div class="theme">
         <input type="checkbox" class="checkbox" id="chk" onchange="turnMode()" />
         <label class="label" for="chk">
-          <i class="fas fa-sun"></i>
-          <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
 
-          <div class="ball"></div>
+            <div class="ball"></div>
         </label>
-      </div>
+    </div>
     <script src="scripts.js"></script>
     <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
 </body>

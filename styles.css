@@ -26,6 +26,7 @@ body input[type="number"]{
     border-radius: 0.3rem;
     text-align: center;
     border-color: gray;
+    border-style: solid;
 }
 
 body.dark input[type="number"]{
@@ -209,9 +210,32 @@ body.light .label .ball{
 }
 
 .fa-stop {
-    color: #f1c40f;
+    color: #ce2f13;
     display: flex;
     margin: auto;
 }
 
-  
+.balls{
+    display: flex;
+    justify-content: center;
+}
+
+.ball-box{
+    margin: .5rem;
+    background-color: #555;
+    border-radius: 50%;
+    height: .5rem;
+    width: .5rem;
+    visibility: hidden;
+    position: absolute;
+}
+
+.ball-box.visible{
+    position: relative;
+    visibility: visible;
+}
+
+.ball-box.on{
+    background-color: #bbb;
+    box-shadow: 0 0 5px #88888899;
+}
