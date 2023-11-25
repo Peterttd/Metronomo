@@ -177,7 +177,6 @@ body.light .label .ball{
 .labelButton{
     margin: 0;
     background-color: #222;
-    border-radius: .3rem;
     cursor: pointer;
 
     display: flex;
@@ -187,27 +186,28 @@ body.light .label .ball{
     padding: 5px;
     position: relative;
     height: 3rem;
-    width: 5rem;
+    width: 6rem;
 
     border: #555 solid .2rem ;
-    border-radius: .3rem;
+    border-radius: 3rem;
 
     box-shadow: 0 0 3px #aaaaaa44;
 }
 
 body.light .labelButton{
     background-color: #ccc;
+    border: #888 solid .2rem ;
 }
 
 body.light .labelButton.labelButton.pressed{
-    background-color: #aaa;
+    background-color: #bbb;
+    border: #777 solid .3rem ;
 }
 
 .labelButton.pressed{
     background-color: #191919;
 
     border: #444 solid .3rem ;
-    border-radius: .3rem;
 }
 
 
