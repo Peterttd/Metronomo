@@ -28,8 +28,8 @@
         </div>
 
         <div>
-            <label for="timeSignature">Compasso: </label>
-            <select id="timeSignature" onchange="updateCompass(this.value)">
+            <label for="compasso">Compasso: </label>
+            <select id="compasso">
                 <option value="4/4">4/4</option>
                 <option value="3/4">3/4</option>
                 <option value="6/8">6/8</option>
@@ -38,13 +38,12 @@
 
         <div>
             <label for="volumeInput">Volume: </label>
-            <input type="range" id="volumeInput" min="0" max="1" step="0.05" value="0.5"
-                oninput="updateVolumeLabel(this.value)">
+            <input type="range" id="volumeInput" min="0" max="1" step="0.05" value="0.5">
             <span id="volumeLabel">50%</span>
         </div>
 
         <div class="play">
-            <button id="button" class="button " onclick="startMetronome()">Play</button>
+            <button id="button" class="button " onclick="startMetronome()"></button>
             <label id="labelButton" class="labelButton pressed" for="button">
                 <i id="icon" class="fa fa-play"></i>
             </label>

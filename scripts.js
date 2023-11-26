@@ -3,25 +3,30 @@ const audio = document.getElementById("metronomeAudio");
 let volume = 0.5;
 let compass = "4/4";
 let tempo = 120;
-let timer = null;
+let timer;
 let comp = 4;
 let bat = 0;
 let dobrar = 60000;
 const box = document.getElementById("box");
+const volumeLabel = document.getElementById("volumeLabel")
+const volumeInput = document.getElementById("volumeInput")
+const compassInput = document.getElementById("compasso")
+const icon = document.getElementById("icon")
 var bolaAcesa = document.getElementById('ball' + bat);
 
-function updateVolumeLabel(newVolume) {
-    volume = newVolume;
-    document.getElementById("volumeLabel").innerHTML = (volume * 100).toFixed(0) + "%";
-    console.log("volume: " + volume)
-}
-function updateCompass(newCompass) {
-    compass = newCompass;
-    console.log("compasso: " + compass)
+volumeInput.addEventListener("input", function () {
+    let newVolume = parseFloat(volumeInput.value);
+    volumeLabel.innerHTML = (newVolume * 100).toFixed(0) + "%";
+    console.log("volume: " + newVolume);
+});
 
-    var numCompass = compass.split('/');
-    comp = parseInt(numCompass[0], 10);
-    console.log(comp);
+compassInput.addEventListener("change", function(){
+    let newCompass = String(compassInput.value)
+    console.log("compasso: " + newCompass)
+
+    var numCompass = newCompass.split('/');
+    comp = parseInt(numCompass[0],7);
+    console.log("compasso numérico:" + comp);
 
     if (comp == 6) {
         dobrar = 30000;
@@ -36,8 +41,8 @@ function updateCompass(newCompass) {
             startMetronome();
         }
     }
+})
 
-}
 function updateTempo(newTempo) {
     tempo = newTempo;
     console.log("Tempo: " + tempo)
@@ -59,7 +64,6 @@ function playAudio() {
             bolaAcesa.classList.remove('on');
             bolaAcesa = document.getElementById('ball' + bat);
         }, 50);
-
 
     } else if (bat == comp - 1) {
         box.style.boxShadow = '0 0 1rem rgba(155, 155, 155, 255)';
@@ -85,36 +89,35 @@ function playAudio() {
         }, 50);
     }
 }
+
 function startMetronome() {
     console.log(bat)
+    bat = 0;
     if (!isPlayng) {
-        bat = 0;
         playAudio();
         isPlayng = true;
         console.log("iniciou");
         timer = setInterval(playAudio, dobrar / tempo);
         document.getElementById("labelButton").classList.add("pressed");
-        document.getElementById("icon").classList.toggle("fa-play")
-        document.getElementById("icon").classList.toggle("fa-stop")
-
+        trocarIcone();
         for (var i = 0; i <= comp - 1; i++) {
-            document.getElementById("ball" + i).classList.toggle("visible");
+            let bolas = document.getElementById("ball"+i);
+            bolas.classList.toggle("visible");
             console.log("ligando bolinhas");
         }
     } else {
         clearInterval(timer);
         isPlayng = false;
         console.log("parou");
-        document.getElementById("button").innerHTML = "Play";
         document.getElementById("labelButton").classList.remove("pressed");
-        document.getElementById("icon").classList.toggle("fa-play")
-        document.getElementById("icon").classList.toggle("fa-stop")
+        trocarIcone();
         box.style.boxShadow = '0 0 9px #50505056';
         for (var i = 0; i <= 6; i++) {
-            document.getElementById("ball" + i).classList.remove("visible");
-            console.log("ligando bolinhas");
+            let bolas = document.getElementById("ball"+i);
+            if(bolas.classList.contains("visible"))
+            bolas.classList.remove("visible");
+            console.log("desligando bolinhas");
         }
-
     }
 }
 
@@ -128,11 +131,12 @@ function turnMode() {
     }
 }
 
+function trocarIcone(){
+    icon.classList.toggle("fa-play")
+    icon.classList.toggle("fa-stop")
+}
+
 
 document.querySelectorAll('.ball-box').forEach(function (ball) {
     ball.classList.remove('on');
 });
-
-
-
-
