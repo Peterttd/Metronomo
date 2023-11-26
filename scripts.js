@@ -5,14 +5,14 @@ let compass = "4/4";
 let tempo = 120;
 let timer;
 let comp = 4;
-let bat = 0;
+let currentBeat = 0;
 let dobrar = 60000;
 const box = document.getElementById("box");
 const volumeLabel = document.getElementById("volumeLabel")
 const volumeInput = document.getElementById("volumeInput")
 const compassInput = document.getElementById("compasso")
 const icon = document.getElementById("icon")
-var bolaAcesa = document.getElementById('ball' + bat);
+var bolaAcesa = document.getElementById('ball' + currentBeat);
 
 volumeInput.addEventListener("input", function () {
     let newVolume = parseFloat(volumeInput.value);
@@ -47,52 +47,48 @@ function updateTempo(newTempo) {
     tempo = newTempo;
     console.log("Tempo: " + tempo)
 }
-function playAudio() {
-    audio.currentTime = 0;
-    console.log("click!")
 
-    if (bat == 0) {
+function toggleShadowAndBalls(){
+    box.style.boxShadow = 'none';
+    bolaAcesa.classList.remove('on');
+    bolaAcesa = document.getElementById('ball' + currentBeat);
+}
+
+function flashesShadowAndBalls(){
+    setTimeout(toggleShadowAndBalls, 50);
+}
+
+function countBeatsAndDetermineShadowsAndVolume(){
+    if (currentBeat == 0) {
         audio.volume = 1 * volume;
-        audio.play();
-        bat++;
-        console.log(bat)
-
+        currentBeat++;
+        console.log(currentBeat)
         box.style.boxShadow = '0 0 3rem rgba(155, 155, 155, 255)';
         bolaAcesa.classList.add('on');
-        setTimeout(function () {
-            box.style.boxShadow = 'none';
-            bolaAcesa.classList.remove('on');
-            bolaAcesa = document.getElementById('ball' + bat);
-        }, 50);
 
-    } else if (bat == comp - 1) {
+    } else if (currentBeat == comp - 1) {
         box.style.boxShadow = '0 0 1rem rgba(155, 155, 155, 255)';
         bolaAcesa.classList.add('on');
-        setTimeout(function () {
-            box.style.boxShadow = 'none';
-            bolaAcesa.classList.remove('on');
-            bolaAcesa = document.getElementById('ball' + bat);
-        }, 50);
-
-        bat = 0;
+        currentBeat = 0;
     } else {
-
         audio.volume = 0.3 * volume;
-        audio.play();
-        bat++;
+        currentBeat++;
         box.style.boxShadow = '0 0 1rem rgba(155, 155, 155, 255)';
         bolaAcesa.classList.add('on');
-        setTimeout(function () {
-            box.style.boxShadow = 'none';
-            bolaAcesa.classList.remove('on');
-            bolaAcesa = document.getElementById('ball' + bat);
-        }, 50);
     }
 }
 
+function playAudio() {
+    audio.currentTime = 0;
+    console.log("click!")
+    countBeats();
+    audio.play();
+    flashesShadowAndBalls();
+}
+
 function startMetronome() {
-    console.log(bat)
-    bat = 0;
+    console.log(currentBeat)
+    currentBeat = 0;
     if (!isPlayng) {
         playAudio();
         isPlayng = true;
