@@ -5,31 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metrônomo</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="dark">
 
-    <audio id="metronomeAudio" src="click.mp3"></audio>
 
-    <div id="box" class="metronome">
-        <div class="balls">
-            <div id="ball0" class="ball-box"></div>
+    <audio id="click1" src="audios/click-1.mp3"></audio>
+    <audio id="click2" src="audios/click-2.mp3"></audio>
+
+    <div id="mainBox" class="metronome">
+        <div id="ballsGroup" class="balls">
             <div id="ball1" class="ball-box"></div>
             <div id="ball2" class="ball-box"></div>
             <div id="ball3" class="ball-box"></div>
             <div id="ball4" class="ball-box"></div>
             <div id="ball5" class="ball-box"></div>
+            <div id="ball6" class="ball-box"></div>
         </div>
 
         <div>
             <label for="tempoInput">Tempo (BPM): </label>
-            <input type="number" id="tempoInput" min="30" max="300" value="120" onchange="updateTempo(this.value)">
+            <input type="number" id="tempoInput" min="30" max="300" value="120">
         </div>
 
         <div>
-            <label for="compasso">Compasso: </label>
-            <select id="compasso">
+            <label for="timeSignature">Compasso: </label>
+            <select id="timeSignature">
                 <option value="4/4">4/4</option>
                 <option value="3/4">3/4</option>
                 <option value="6/8">6/8</option>
@@ -43,14 +45,14 @@
         </div>
 
         <div class="play">
-            <button id="button" class="button " onclick="startMetronome()"></button>
-            <label id="labelButton" class="labelButton pressed" for="button">
+            <button id="playButton" class="button "></button>
+            <label id="labelButton" class="labelButton" for="playButton">
                 <i id="icon" class="fa fa-play"></i>
             </label>
         </div>
     </div>
     <div class="theme">
-        <input type="checkbox" class="checkbox" id="chk" onchange="turnMode()" />
+        <input type="checkbox" class="checkbox" id="chk"/>
         <label class="label" for="chk">
             <i class="fas fa-sun"></i>
             <i class="fas fa-moon"></i>
@@ -58,7 +60,8 @@
             <div class="ball"></div>
         </label>
     </div>
-    <script src="scripts.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/appearance.js"></script>
     <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
 </body>
 

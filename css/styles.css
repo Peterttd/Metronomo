@@ -52,11 +52,11 @@ body.dark {
     color: #f0f0f0;
 }
 
-body.light{
+body{
     background-color: #f0f0f0;
 }
 
-body.light input[type="range"]{   
+body input[type="range"]{   
     accent-color: lightblue;
     background-color: gray;
     border-radius: 1rem;
@@ -72,7 +72,7 @@ input[type="number"]::-webkit-clear-button {
 }
 
 
-body.light .metronome {
+body .metronome {
     display: inline-flex;
     flex-direction: column;
     background-color: #fdfdfd;
@@ -110,7 +110,7 @@ body.dark .label{
     background-color: #f0f0f0;
 }
 
-body.light .label{
+body .label{
     background-color: #114;
 }
 
@@ -146,7 +146,7 @@ body.dark .label .ball{
     background-color: #161616;
 }
 
-body.light .label .ball{
+body .label .ball{
     background-color: #f0f0f0;
 }
 
@@ -176,7 +176,6 @@ body.light .label .ball{
 
 .labelButton{
     margin: 0;
-    background-color: #222;
     cursor: pointer;
 
     display: flex;
@@ -188,23 +187,28 @@ body.light .label .ball{
     height: 3rem;
     width: 6rem;
 
-    border: #555 solid .2rem ;
     border-radius: 3rem;
-
-    box-shadow: 0 0 3px #aaaaaa44;
 }
 
-body.light .labelButton{
+body .labelButton{
     background-color: #ccc;
     border: #888 solid .2rem ;
 }
 
-body.light .labelButton.labelButton.pressed{
+body .labelButton.pressed{
     background-color: #bbb;
     border: #777 solid .3rem ;
 }
 
-.labelButton.pressed{
+.dark .labelButton{
+    background-color: #222;
+
+    border: #555 solid .2rem ;
+
+    box-shadow: 0 0 3px #aaaaaa44;
+}
+
+.dark .labelButton.pressed{
     background-color: #191919;
 
     border: #444 solid .3rem ;
