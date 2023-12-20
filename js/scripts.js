@@ -49,9 +49,7 @@ playButton.addEventListener("click", function () {
     console.log(isPlaying)
 })
 
-function toggleIsPlaying() {
-    isPlaying = !isPlaying
-}
+const toggleIsPlaying = () => isPlaying = !isPlaying
 
 let intervalNormal
 let intervalDouble
@@ -92,9 +90,7 @@ function toggleShadows() {
     isShadow = !isShadow
 }
 
-function turnOffTheShadows(){
-    mainBox.style.boxShadow = 'none'
-}
+const turnOffTheShadows = () => mainBox.style.boxShadow = 'none'
 
 function shadowStrength() {
     if (currentBat == 1) {
@@ -172,6 +168,4 @@ function updateMetronomeAudio() {
 
 const labelButton = document.getElementById("labelButton")
 
-function togglePlayButtonPressed() {
-    labelButton.classList.toggle("pressed")
-}
+const togglePlayButtonPressed = () => labelButton.classList.toggle("pressed");
