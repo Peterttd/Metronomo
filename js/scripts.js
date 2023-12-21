@@ -173,7 +173,6 @@ const iconBtn = document.getElementById("icon")
 const togglePlayButtonPressed = () => labelButton.classList.toggle("pressed");
 const togglePlayButtonClassIcon = () => {
 
-
     if (!isPlaying) {
         console.log("iugdiuwegpfiuwgeupfewgfuiwe")
         iconBtn.classList.remove("fa-play")

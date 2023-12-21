@@ -6,7 +6,6 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     font-weight: bolder;
-
 }
 
 body {
@@ -18,7 +17,6 @@ body {
     color: #161616;
 
     transition: background 0.15s linear;
-    
 }
 
 body input[type="number"]{
@@ -39,7 +37,6 @@ body select{
     border-radius: 0.3rem;
     text-align: center;
     border-color: gray;
-
 }
 
 body.dark select{
@@ -93,8 +90,6 @@ body.dark .metronome {
 .metronome div {
     padding: 0.5rem;
 }
-
-
 
 .theme{
     position: absolute;
@@ -166,7 +161,6 @@ body .label .ball{
 .button{
     opacity: 0;
     position: absolute;
-
 }
 
 .play{
@@ -194,7 +188,6 @@ body .label .ball{
     background-color: #e7e7e7;
     box-shadow: #bbb 0 0 5px;
     position: relative;
-
 }
 
 .dark .labelButton{
@@ -234,10 +227,8 @@ body .label .ball{
     transition: .5s;
 }
 
-
 .labelButton:hover .txt-btn {
     left: 5%;
-
 }
 
 .labelButton:hover .line-y {
