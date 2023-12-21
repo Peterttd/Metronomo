@@ -197,6 +197,14 @@ body .label .ball{
 
 }
 
+.dark .labelButton{
+    background-color: #222;
+}
+
+.dark .txt-btn{
+    color: #cdcdcd;
+}
+
 .line-y{
     border-left: #bbb 1px solid;
     padding: 0 !important;
