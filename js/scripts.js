@@ -31,8 +31,11 @@ const playButton = document.getElementById("playButton")
 let isPlaying = false
 
 playButton.addEventListener("click", function () {
+    togglePlayButtonClassIcon()
+    togglePlayButtonPressed()
+    turnPlayButton()
+
     if (!isPlaying) {
-        togglePlayButtonPressed()
         console.log("playing")
         turnOnTheBalls()
         setIntervals()
@@ -40,12 +43,10 @@ playButton.addEventListener("click", function () {
         console.log(isPlaying)
         return
     }
-
     turnOffTheBalls()
     turnOffTheShadows()
     clearIntervals()
     toggleIsPlaying()
-    togglePlayButtonPressed()
     console.log(isPlaying)
 })
 
@@ -167,5 +168,29 @@ function updateMetronomeAudio() {
 }
 
 const labelButton = document.getElementById("labelButton")
+const iconBtn = document.getElementById("icon")
 
 const togglePlayButtonPressed = () => labelButton.classList.toggle("pressed");
+const togglePlayButtonClassIcon = () => {
+
+
+    if (!isPlaying) {
+        console.log("iugdiuwegpfiuwgeupfewgfuiwe")
+        iconBtn.classList.remove("fa-play")
+        iconBtn.classList.add("fa-stop")
+        return
+    }
+    iconBtn.classList.remove("fa-stop")
+    iconBtn.classList.add("fa-play")
+}
+
+const btnText = document.getElementById("txt-btn")
+
+function turnPlayButton(){
+    if(!isPlaying){
+        btnText.innerText = "Stop"
+        return
+    }
+
+    btnText.innerText = "Play"
+}
